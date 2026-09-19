@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard - InternHub</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+
+  <!-- TOP NAVIGATION -->
+  <nav class="navbar">
+    <div class="logo">🎓 InternHub Admin</div>
+    <div class="nav-links">
+      <span>Admin Panel</span>
+      <a href="login.html" id="logoutBtn">Logout</a>
+    </div>
+  </nav>
+
+  <!-- ADMIN DASHBOARD CONTENT -->
+  <div class="dashboard-container">
+
+    <h2>🛠️ All Intern Submissions</h2>
+
+    <!-- SUMMARY CARDS -->
+    <div class="summary-cards">
+      <div class="card">
+        <h3 id="totalInterns">0</h3>
+        <p>Total Interns</p>
+      </div>
+      <div class="card">
+        <h3 id="totalSubmissions">0</h3>
+        <p>Total Submissions</p>
+      </div>
+      <div class="card">
+        <h3 id="pendingReview">0</h3>
+        <p>Pending Review</p>
+      </div>
+    </div>
+
+    <!-- ALL SUBMISSIONS TABLE -->
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Intern Name</th>
+            <th>Task Title</th>
+            <th>Category</th>
+            <th>Submitted On</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <!-- Rows added dynamically by admin JS -->
+        <tbody id="adminTable">
+        </tbody>
+      </table>
+
+      <!-- Shown when no data -->
+      <p id="noData" class="no-data">No submissions found.</p>
+    </div>
+
+  </div>
+
+  <script type="module" src="dashboard.js"></script>
+
+
+</body>
+</html>

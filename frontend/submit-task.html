@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Submit Task - InternHub</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="auth.css" />
+</head>
+<body>
+
+  <!-- TOP NAVIGATION -->
+  <nav class="navbar">
+    <div class="logo">🎓 InternHub</div>
+    <div class="nav-links">
+      <a href="dashboard.html">← Back to Dashboard</a>
+    </div>
+  </nav>
+
+  <div class="auth-container wide">
+    <h2>📤 Submit a Task</h2>
+    <p class="auth-subtitle">Fill in the details of your completed task or project</p>
+
+    <!-- TASK SUBMISSION FORM -->
+    <form id="taskForm">
+
+      <!-- Task Title -->
+      <div class="form-group">
+        <label>Task Title</label>
+        <input type="text" id="taskTitle" placeholder="e.g. Frontend Login Page" required />
+      </div>
+
+      <!-- Category -->
+      <div class="form-group">
+        <label>Category</label>
+        <select id="taskCategory">
+          <option value="Development">Development</option>
+          <option value="Design">Design</option>
+          <option value="Research">Research</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <!-- Description -->
+      <div class="form-group">
+        <label>Description</label>
+        <textarea id="taskDescription" rows="4" placeholder="Describe what you did and what you learned..."></textarea>
+      </div>
+
+      <!-- Link (optional) -->
+      <div class="form-group">
+        <label>Project Link (optional)</label>
+        <input type="url" id="taskLink" placeholder="https://github.com/your-repo" />
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn-primary full-width">Submit Task</button>
+
+    </form>
+
+    <!-- Success / Error message -->
+    <p id="message" class="message"></p>
+
+  </div>
+
+  <script type="module" src="tasks.js"></script>
+
+
+</body>
+</html>

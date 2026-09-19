@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register - InternHub</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="auth.css" />
+</head>
+<body>
+
+  <div class="auth-container">
+    <h2>🎓 Create Account</h2>
+    <p class="auth-subtitle">Register as an intern to get started</p>
+
+    <!-- REGISTRATION FORM -->
+    <form id="registerForm">
+
+      <!-- Full Name -->
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" id="name" placeholder="Enter your full name" required />
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" required />
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Create a password" required />
+      </div>
+
+      <!-- Role -->
+      <div class="form-group">
+        <label>Role</label>
+        <select id="role">
+          <option value="intern">Intern</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+
+      <!-- Admin code (only needed if Role = Admin) -->
+      <div class="form-group" id="adminCodeGroup" style="display:none;">
+        <label>Admin Signup Code</label>
+        <input type="text" id="adminCode" placeholder="Ask your administrator" />
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn-primary full-width">Register</button>
+
+    </form>
+
+    <!-- Error / Success message area -->
+    <p id="message" class="message"></p>
+
+    <p class="auth-footer">Already have an account? <a href="login.html">Login here</a></p>
+  </div>
+
+  <script>
+    // Show the admin-code box only when Admin is selected
+    const roleSelect = document.getElementById('role');
+    const adminGroup = document.getElementById('adminCodeGroup');
+    roleSelect.addEventListener('change', () => {
+      adminGroup.style.display = roleSelect.value === 'admin' ? 'block' : 'none';
+    });
+  </script>
+
+  <script type="module" src="auth.js"></script>
+
+
+</body>
+</html>

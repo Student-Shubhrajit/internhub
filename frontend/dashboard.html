@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - InternHub</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+
+  <!-- TOP NAVIGATION -->
+  <nav class="navbar">
+    <div class="logo">🎓 InternHub</div>
+    <div class="nav-links">
+      <!-- Shows the logged-in user's name -->
+      <span id="welcomeMsg">Welcome, Intern!</span>
+      <a href="submit-task.html" class="btn-primary">+ Submit Task</a>
+      <a href="login.html" id="logoutBtn">Logout</a>
+    </div>
+  </nav>
+
+  <!-- DASHBOARD MAIN CONTENT -->
+  <div class="dashboard-container">
+
+    <h2>📋 My Submissions</h2>
+
+    <!-- SUMMARY CARDS -->
+    <div class="summary-cards">
+      <div class="card">
+        <h3 id="totalCount">0</h3>
+        <p>Total Submissions</p>
+      </div>
+      <div class="card">
+        <h3 id="pendingCount">0</h3>
+        <p>Pending Review</p>
+      </div>
+      <div class="card">
+        <h3 id="approvedCount">0</h3>
+        <p>Approved</p>
+      </div>
+    </div>
+
+    <!-- SUBMISSIONS TABLE -->
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Task Title</th>
+            <th>Category</th>
+            <th>Submitted On</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <!-- Rows are added here by dashboard.js -->
+        <tbody id="submissionsTable">
+          <!-- Dynamic rows will appear here -->
+        </tbody>
+      </table>
+
+      <!-- Shown when no submissions exist -->
+      <p id="noData" class="no-data">No submissions yet. <a href="submit-task.html">Submit your first task!</a></p>
+    </div>
+
+  </div>
+
+  <script type="module" src="dashboard.js"></script>
+
+
+</body>
+</html>

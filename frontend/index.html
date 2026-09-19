@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>InternHub - Internship Management</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar">
+    <div class="logo">🎓 InternHub</div>
+    <div class="nav-links">
+      <a href="login.html">Login</a>
+      <a href="register.html" class="btn-primary">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>Manage Your Internship Tasks</h1>
+    <p>Submit projects, track progress, and stay organized — all in one place.</p>
+    <a href="register.html" class="btn-primary">Join Now</a>
+    <a href="login.html" class="btn-secondary">Login</a>
+  </section>
+
+  <!-- FEATURES SECTION -->
+  <section class="features">
+    <div class="feature-card">
+      <span>📋</span>
+      <h3>Submit Tasks</h3>
+      <p>Easily upload and submit your daily or weekly tasks.</p>
+    </div>
+    <div class="feature-card">
+      <span>📊</span>
+      <h3>Track Progress</h3>
+      <p>View all your submissions in a personal dashboard.</p>
+    </div>
+    <div class="feature-card">
+      <span>✅</span>
+      <h3>Get Feedback</h3>
+      <p>Admins review and give feedback on your work.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2024 InternHub. All rights reserved.</p>
+  </footer>
+
+  <!-- Quick backend health check (open DevTools console) -->
+  <script>
+    fetch("/api/test")
+      .then(res => res.json())
+      .then(data => console.log("✅", data.message))
+      .catch(err => console.error("❌ Backend unreachable:", err));
+  </script>
+
+</body>
+</html>

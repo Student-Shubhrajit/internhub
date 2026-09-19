@@ -1,0 +1,223 @@
+/* =============================================
+   style.css — Global Styles for InternHub
+   ============================================= */
+
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* --- CSS Variables (Color Palette) --- */
+:root {
+  --primary: #2563eb;        /* Blue - main brand color */
+  --primary-dark: #1d4ed8;   /* Darker blue for hover */
+  --accent: #f59e0b;         /* Amber - highlight color */
+  --bg: #f8fafc;             /* Light page background */
+  --surface: #ffffff;        /* Card / form background */
+  --text: #1e293b;           /* Main text */
+  --muted: #64748b;          /* Subtle / secondary text */
+  --border: #e2e8f0;         /* Borders */
+  --success: #16a34a;        /* Green - approved status */
+  --warning: #d97706;        /* Orange - pending status */
+  --radius: 12px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
+
+/* --- Reset & Base --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --- Navbar --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+
+.logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 0.95rem;
+}
+
+.nav-links span {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* --- Buttons --- */
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 10px 22px;
+  border: none;
+  border-radius: var(--radius);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-block;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary);
+  padding: 10px 22px;
+  border: 2px solid var(--primary);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+}
+
+.full-width {
+  width: 100%;
+  padding: 13px;
+  font-size: 1rem;
+}
+
+/* --- Hero Section (index.html) --- */
+.hero {
+  text-align: center;
+  padding: 100px 20px 60px;
+  background: linear-gradient(135deg, #eff6ff 0%, #fef3c7 100%);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--muted);
+  margin-bottom: 30px;
+}
+
+.hero a {
+  margin: 0 8px;
+}
+
+/* --- Features Section (index.html) --- */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 60px 40px;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  width: 260px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: transform 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+}
+
+.feature-card span {
+  font-size: 2.5rem;
+}
+
+.feature-card h3 {
+  margin: 12px 0 8px;
+  font-size: 1.1rem;
+}
+
+.feature-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+}
+
+/* --- Status Badges --- */
+.badge {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.badge-pending {
+  background: #fef3c7;
+  color: var(--warning);
+}
+
+.badge-approved {
+  background: #dcfce7;
+  color: var(--success);
+}
+
+.badge-rejected {
+  background: #fee2e2;
+  color: #dc2626;
+}
